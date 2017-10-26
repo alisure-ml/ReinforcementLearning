@@ -1,9 +1,6 @@
 import gym
 
-# env = gym.make("CartPole-v0")
-# env = gym.make("MountainCar-v0")
-# env = gym.make("FrozenLake-v0")
-# env = gym.make("AirRaid-v0")
+env = gym.make("AirRaid-v0")
 # env = gym.make("Alien-v0")
 # env = gym.make("Amidar-v0")
 # env = gym.make("Ant-v1")
@@ -13,13 +10,71 @@ import gym
 # env = gym.make("BankHeist-v0")
 # env = gym.make("BattleZone-v0")
 # env = gym.make("BeamRider-v0")
-env = gym.make("Berzerk-v0")
-
-
+# env = gym.make("Berzerk-v0")
+# env = gym.make("Blackjack-v0")
+# env = gym.make("Bowling-v0")
+# env = gym.make("Boxing-v0")
+# env = gym.make("Breakout-v0")
+# env = gym.make("CNNClassifierTraining-v0")  # https://s3.amazonaws.com/img-datasets/mnist.pkl.gz
+# env = gym.make("CarRacing-v0")
+# env = gym.make("Carnival-v0")
+# env = gym.make("CartPole-v0")
+# env = gym.make("ChopperCommand-v0")
+# env = gym.make("CliffWalking-v0")
+# env = gym.make("ConvergenceControl-v0")
+# env = gym.make("Copy-v0")
+# env = gym.make("CrazyClimber-v0")
+# env = gym.make("DemonAttack-v0")  # good
+# env = gym.make("DoubleDunk-v0")
+# env = gym.make("DuplicatedInput-v0")
+# env = gym.make("ElevatorAction-v0")
+# env = gym.make("Enduro-v0")
+# env = gym.make("FishingDerby-v0")
+# env = gym.make("Freeway-v0")
+# env = gym.make("Frostbite-v0")
+# env = gym.make("Gopher-v0")
+# env = gym.make("Go9x9-v0")
+# env = gym.make("Hero-v0")
+# env = gym.make("Gravitar-v0")
+# env = gym.make("IceHockey-v0")
+# env = gym.make("Jamesbond-v0")
+# env = gym.make("JourneyEscape-v0") # good
+# env = gym.make("Kangaroo-v0")
+# env = gym.make("Krull-v0")
+# env = gym.make("KungFuMaster-v0")
+# env = gym.make("MontezumaRevenge-v0")
+# env = gym.make("MountainCar-v0")
+# env = gym.make("MsPacman-v0")
+# env = gym.make("NameThisGame-v0")  # good
+# env = gym.make("Pendulum-v0")
+# env = gym.make("Phoenix-v0")  # good
+# env = gym.make("Pitfall-v0")
+# env = gym.make("Pong-v0")
+# env = gym.make("Pooyan-v0")
+# env = gym.make("PrivateEye-v0")
+# env = gym.make("Qbert-v0")
+# env = gym.make("Riverraid-v0")  # good
+# env = gym.make("")
+# env = gym.make("RoadRunner-v0")
+# env = gym.make("Robotank-v0")
+# env = gym.make("Seaquest-v0")
+# env = gym.make("Skiing-v0")
+# env = gym.make("Solaris-v0")
+# env = gym.make("StarGunner-v0")
+# env = gym.make("Taxi-v2")
+# env = gym.make("Tennis-v0")
+# env = gym.make("TimePilot-v0")
+# env = gym.make("Tutankham-v0")
+# env = gym.make("UpNDown-v0")
+# env = gym.make("Venture-v0")
+# env = gym.make("VideoPinball-v0")
+# env = gym.make("WizardOfWor-v0")
+# env = gym.make("YarsRevenge-v0")
+# env = gym.make("Zaxxon-v0")
 
 
 env.reset()
-for _ in range(1000):
+for _ in range(500):
     env.render()
     env.step(env.action_space.sample())
 
