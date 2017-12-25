@@ -1,4 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
+
 .idea
 .gitignore
-src/__pycache__/
+
+Basic/model
+Basic/src/dqn
+
+FiveInARow/gym-gomoku-master
+FiveInARow/gym-gomoku-master.zip
+
+

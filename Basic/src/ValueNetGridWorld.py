@@ -240,8 +240,8 @@ class QNetwork:
         # 拆成两份：Action的价值，环境本身的价值
         self.streamAC, self.streamVC = tf.split(self.conv4, 2, 3)
         # 拉直
-        self.streamA = tf.contrib.layers.flatten(self.streamAC)
-        self.streamV = tf.contrib.layers.flatten(self.streamVC)
+        self.streamA = tcl.flatten(self.streamAC)
+        self.streamV = tcl.flatten(self.streamVC)
 
         self.AW = tf.Variable(tf.random_normal([conv_final_size // 2, environment.actions]))
         self.VW = tf.Variable(tf.random_normal([conv_final_size // 2, 1]))
@@ -287,7 +287,7 @@ class ExperienceBuffer:
     def add(self, experience):
         # 若经验超过最大容量，清除最前面的经验
         if len(self.buffer) + len(experience) >= self.buffer_size:
-            self.buffer[0:(len(experience) + len(self.buffer)) - self.buffer_size] = []
+            self.buffer[0:len(experience) + len(self.buffer) - self.buffer_size] = []
         # add
         self.buffer.extend(experience)
         pass
@@ -317,7 +317,7 @@ class Runner:
         # 最终执行随机Action的概率
         self.end_e = 0.1
         # 从初始随机概率降到最终随机概率的步数
-        self.anneling_steps = 10000
+        self.anneling_steps = 10000.0
         # step drop
         self.step_drop = (self.start_e - self.end_e) / self.anneling_steps
         # 进行试验的次数
@@ -354,7 +354,7 @@ class Runner:
         self.target_ops = self.update_target_graph(tf.trainable_variables(), self.tau)
         self.my_buffer = ExperienceBuffer()
         self.saver = tf.train.Saver()
-        self.sess = tf.Session()
+        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True)))
 
         # 加载模型
         if self.is_load_model:
